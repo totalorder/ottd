@@ -763,6 +763,7 @@ void RecomputePrices()
 			case 0: price *= 6; break;
 			case 1: price *= 8; break; // normalised to 1 below
 			case 2: price *= 9; break;
+			case 3: price *= 15; break;
 			default: NOT_REACHED();
 		}
 
