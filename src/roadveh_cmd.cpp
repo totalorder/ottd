@@ -1657,6 +1657,10 @@ void RoadVehicle::OnNewDay()
 	if (this->running_ticks == 0) return;
 
 	CommandCost cost(EXPENSES_ROADVEH_RUN, this->GetRunningCost() * this->running_ticks / (DAYS_IN_YEAR * DAY_TICKS));
+	if (_settings_game.economy.exp_running_costs) {				
+		cost.MultiplyCost(GetVehicleTypeExponentialMultiplier(VEH_ROAD, this->owner, 
+			_settings_game.economy.exp_running_costs_road));
+	}
 
 	this->profit_this_year -= cost.GetCost();
 	this->running_ticks = 0;

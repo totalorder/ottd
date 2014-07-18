@@ -688,6 +688,12 @@ static void CompaniesGenStatistics()
 	SetWindowDirty(WC_COMPANY_LEAGUE, 0);
 }
 
+int64 GetVehicleTypeExponentialMultiplier(VehicleType vehicle_type, OwnerByte owner, uint divisor) {
+	int vehicles = Company::Get(owner)->group_all[vehicle_type].num_vehicle;
+  return (11 + vehicles + IntSqrt(vehicles)) / divisor * 
+  	_settings_game.economy.exp_running_costs_factor / 10;
+}
+
 /**
  * Add monthly inflation
  * @param check_year Shall the inflation get stopped after 170 years?

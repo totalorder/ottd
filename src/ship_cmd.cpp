@@ -11,6 +11,7 @@
 
 #include "stdafx.h"
 #include "ship.h"
+#include "debug.h"
 #include "landscape.h"
 #include "timetable.h"
 #include "news_func.h"
@@ -225,7 +226,10 @@ void Ship::OnNewDay()
 	if (this->running_ticks == 0) return;
 
 	CommandCost cost(EXPENSES_SHIP_RUN, this->GetRunningCost() * this->running_ticks / (DAYS_IN_YEAR * DAY_TICKS));
-
+	if (_settings_game.economy.exp_running_costs) {				
+		cost.MultiplyCost(GetVehicleTypeExponentialMultiplier(VEH_SHIP, this->owner, 
+			_settings_game.economy.exp_running_costs_ship));
+	}
 	this->profit_this_year -= cost.GetCost();
 	this->running_ticks = 0;
 

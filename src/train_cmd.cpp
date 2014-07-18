@@ -35,6 +35,7 @@
 #include "order_backup.h"
 #include "zoom_func.h"
 #include "newgrf_debug.h"
+#include "economy_func.h"
 
 #include "table/strings.h"
 #include "table/train_cmd.h"
@@ -3993,6 +3994,10 @@ void Train::OnNewDay()
 		if (this->running_ticks != 0) {
 			/* running costs */
 			CommandCost cost(EXPENSES_TRAIN_RUN, this->GetRunningCost() * this->running_ticks / (DAYS_IN_YEAR  * DAY_TICKS));
+			if (_settings_game.economy.exp_running_costs) {				
+				cost.MultiplyCost(GetVehicleTypeExponentialMultiplier(VEH_TRAIN, this->owner, 
+					_settings_game.economy.exp_running_costs_train));
+			}
 
 			this->profit_this_year -= cost.GetCost();
 			this->running_ticks = 0;

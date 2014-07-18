@@ -1214,6 +1214,15 @@ STR_CONFIG_SETTING_STOP_ON_COMPETITOR_ROAD_HELPTEXT             :Allow construct
 STR_CONFIG_SETTING_DYNAMIC_ENGINES_EXISTING_VEHICLES            :{WHITE}Changing this setting is not possible when there are vehicles
 STR_CONFIG_SETTING_INFRASTRUCTURE_MAINTENANCE                   :Infrastructure maintenance: {STRING2}
 STR_CONFIG_SETTING_INFRASTRUCTURE_MAINTENANCE_HELPTEXT          :When enabled, infrastructure causes maintenance costs. The cost grows over-proportional with the network size, thus affecting bigger companies more than smaller ones
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS                            :Exponential running costs: {STRING2}
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_HELPTEXT                   :When enabled, vehicles causes extra running costs. The cost grows exponentially with the number of the same vehicle, thus affecting bigger companies more than smaller ones
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_FACTOR                     :Running cost factor: {STRING2}
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_FACTOR_HELPTEXT            :The factor at which the exponential running costs will be based on
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_DIVISOR_HELPTEXT           :The value to divide the exponential multiplier by. Higher number gives lower cost
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_AIR                        :Exp. running cost divisor, airplanes: {STRING2}
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_SHIP                       :Exp. running cost divisor, ships: {STRING2}
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_ROAD                       :Exp. running cost divisor, road vehicles: {STRING2}
+STR_CONFIG_SETTING_EXP_RUNNING_COSTS_TRAIN                      :Exp. running cost divisor, trains: {STRING2}
 
 STR_CONFIG_SETTING_NEVER_EXPIRE_AIRPORTS                        :Airports never expire: {STRING2}
 STR_CONFIG_SETTING_NEVER_EXPIRE_AIRPORTS_HELPTEXT               :Enabling this setting makes each airport type stay available forever after its introduction

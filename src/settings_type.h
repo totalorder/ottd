@@ -486,6 +486,12 @@ struct EconomySettings {
 	uint16 town_noise_population[3];         ///< population to base decision on noise evaluation (@see town_council_tolerance)
 	bool   allow_town_level_crossings;       ///< towns are allowed to build level crossings
 	bool   infrastructure_maintenance;       ///< enable monthly maintenance fee for owner infrastructure
+ 	bool   exp_running_costs;                ///< enable exponential monthly running cost for owner. exponential based on vehicles of same type
+ 	uint8  exp_running_costs_factor;         ///< factor to set difficulty of exponential running costs
+ 	uint8  exp_running_costs_air;          ///< factor to set difficulty of exponential running costs, ariplanes
+ 	uint8  exp_running_costs_ship;         ///< factor to set difficulty of exponential running costs, ships
+ 	uint8  exp_running_costs_road;         ///< factor to set difficulty of exponential running costs, road vehicles
+ 	uint8  exp_running_costs_train;        ///< factor to set difficulty of exponential running costs, trains
 };
 
 struct LinkGraphSettings {

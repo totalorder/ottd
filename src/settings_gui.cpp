@@ -1562,6 +1562,12 @@ static SettingsContainer &GetSettingsTree()
 			accounting->Add(new SettingEntry("difficulty.subsidy_multiplier"));
 			accounting->Add(new SettingEntry("economy.feeder_payment_share"));
 			accounting->Add(new SettingEntry("economy.infrastructure_maintenance"));
+			accounting->Add(new SettingEntry("economy.exp_running_costs")),
+			accounting->Add(new SettingEntry("economy.exp_running_costs_factor")),			
+			accounting->Add(new SettingEntry("economy.exp_running_costs_air")),			
+			accounting->Add(new SettingEntry("economy.exp_running_costs_ship")),			
+			accounting->Add(new SettingEntry("economy.exp_running_costs_road")),			
+			accounting->Add(new SettingEntry("economy.exp_running_costs_train")),			
 			accounting->Add(new SettingEntry("difficulty.vehicle_costs"));
 			accounting->Add(new SettingEntry("difficulty.construction_cost"));
 		}

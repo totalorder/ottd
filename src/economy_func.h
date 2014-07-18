@@ -31,6 +31,8 @@ int UpdateCompanyRatingAndValue(Company *c, bool update);
 void StartupIndustryDailyChanges(bool init_counter);
 
 Money GetTransportedGoodsIncome(uint num_pieces, uint dist, byte transit_days, CargoID cargo_type);
+int64 GetVehicleTypeExponentialMultiplier(VehicleType vehicle_type, OwnerByte owner, uint divisor);
+
 uint MoveGoodsToStation(CargoID type, uint amount, SourceType source_type, SourceID source_id, const StationList *all_stations);
 
 void PrepareUnload(Vehicle *front_v);

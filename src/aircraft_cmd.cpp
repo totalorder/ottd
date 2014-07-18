@@ -435,6 +435,11 @@ void Aircraft::OnNewDay()
 
 	CommandCost cost(EXPENSES_AIRCRAFT_RUN, this->GetRunningCost() * this->running_ticks / (DAYS_IN_YEAR * DAY_TICKS));
 
+	if (_settings_game.economy.exp_running_costs) {				
+		cost.MultiplyCost(GetVehicleTypeExponentialMultiplier(VEH_AIRCRAFT, this->owner, 
+			_settings_game.economy.exp_running_costs_air));
+	}
+
 	this->profit_this_year -= cost.GetCost();
 	this->running_ticks = 0;
 
